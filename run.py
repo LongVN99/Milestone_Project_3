@@ -15,6 +15,11 @@ def about():
     return render_template("about.html")
 
 
+@app.route("/products")
+def careers():
+    return render_template("products.html")
+
+
 @app.route("/contact")
 def contact():
     return render_template("contact.html")
