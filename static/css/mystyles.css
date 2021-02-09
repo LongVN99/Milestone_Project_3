@@ -1,0 +1,6 @@
+.fixed-height img{
+    height: 250px !important;
+}
+.card-inner{
+    margin-left: 5rem;
+}
