@@ -1,6 +1,5 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -20,10 +19,8 @@
     <!-- Third party plugin CSS-->
     <link href="https://cdnjs.cloudflare.com/ajax/libs/magnific-popup.js/1.1.0/magnific-popup.min.css"
         rel="stylesheet" />
-</head>
-
+    </head>
 <body id="page-top">
-
     <!-- Navigation-->
     <nav class="navbar navbar-expand-lg navbar-light fixed-top py-3" id="mainNav">
         <div class="container">
@@ -33,9 +30,10 @@
                 aria-label="Toggle navigation"><span class="navbar-toggler-icon"></span></button>
             <div class="collapse navbar-collapse" id="navbarResponsive">
                 <ul class="navbar-nav ml-auto my-2 my-lg-0">
-                    <li class="nav-item"><a class="nav-link js-scroll-trigger" href="#about">About</a></li>
                     <li class="nav-item"><a class="nav-link js-scroll-trigger" href="#books">Books</a></li>
                     <li class="nav-item"><a class="nav-link js-scroll-trigger" href="#reviews">Reviews</a></li>
+                    <li class="nav-item"><a class="nav-link js-scroll-trigger"
+                            href="{{ url_for('register') }}">Register</a></li>
                 </ul>
             </div>
         </div>
@@ -83,68 +81,7 @@
                 <button type="submit"><i class="fa fa-search"></i></button>
             </form>
         </div>
-        <!-- Reviews
-        <div class="container">
-            <h4>Reviews</h4>
-            <div class="card">
-                <div class="card-body">
-                    <div class="row">
-                        <div class="col-md-2">
-                            <img src="https://image.ibb.co/jw55Ex/def_face.jpg" class="img img-rounded img-fluid" />
-                            <p class="text-secondary text-center">15 Minutes Ago</p>
-                        </div>
-                        <div class="col-md-10">
-                            <p>
-                                <a class="float-left"
-                                    href="https://maniruzzaman-akash.blogspot.com/p/contact.html"><strong>Maniruzzaman
-                                        Akash</strong></a>
-                                <span class="float-right"><i class="text-warning fa fa-star"></i></span>
-                                <span class="float-right"><i class="text-warning fa fa-star"></i></span>
-                                <span class="float-right"><i class="text-warning fa fa-star"></i></span>
-                                <span class="float-right"><i class="text-warning fa fa-star"></i></span>
-
-                            </p>
-                            <div class="clearfix"></div>
-                            <p>Lorem Ipsum is simply dummy text of the pr make but also the leap into electronic
-                                typesetting, remaining essentially unchanged. It was popularised in the 1960s with the
-                                release of Letraset sheets containing Lorem Ipsum passages, and more recently with
-                                desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.</p>
-                            <p>
-                                <a class="float-right btn btn-outline-primary ml-2"> <i class="fa fa-reply"></i>
-                                    Reply</a>
-                                <a class="float-right btn text-white btn-danger"> <i class="fa fa-heart"></i> Like</a>
-                            </p>
-                        </div>
-                    </div>
-                    <div class="card card-inner">
-                        <div class="card-body">
-                            <div class="row">
-                                <div class="col-md-2">
-                                    <img src="https://image.ibb.co/jw55Ex/def_face.jpg"
-                                        class="img img-rounded img-fluid" />
-                                    <p class="text-secondary text-center">15 Minutes Ago</p>
-                                </div>
-                                <div class="col-md-10">
-                                    <p><a href="https://maniruzzaman-akash.blogspot.com/p/contact.html"><strong>Maniruzzaman
-                                                Akash</strong></a></p>
-                                    <p>Lorem Ipsum is simply dummy text of the pr make but also the leap into electronic
-                                        typesetting, remaining essentially unchanged. It was popularised in the 1960s
-                                        with the release of Letraset sheets containing Lorem Ipsum passages, and more
-                                        recently with desktop publishing software like Aldus PageMaker including
-                                        versions of Lorem Ipsum.</p>
-                                    <p>
-                                        <a class="float-right btn btn-outline-primary ml-2"> <i class="fa fa-reply"></i>
-                                            Reply</a>
-                                        <a class="float-right btn text-white btn-danger"> <i class="fa fa-heart"></i>
-                                            Like</a>
-                                    </p>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>-->
+        <!-- Reviews-->
         <!-- Recommendations-->
         <section class="recommendations">
             <h4>Recommendations</h4>
@@ -184,37 +121,6 @@
                 </a>
             </div>
         </section>
-    </section>
-    <!-- Call to action-->
-    <section class="page-section bg-dark text-white">
-        <div class="container text-center">
-            <h2 class="mb-4">Free Download at Start Bootstrap!</h2>
-            <a class="btn btn-light btn-xl" href="https://startbootstrap.com/theme/creative/">Download Now!</a>
-        </div>
-    </section>
-    <!-- Reviews-->
-    <section class="page-section" id="reviews">
-        <div class="container">
-            <div class="row justify-content-center">
-                <div class="col-lg-8 text-center">
-                    <h2 class="mt-0">Let's Get In Touch!</h2>
-                    <hr class="divider my-4" />
-                    <p class="text-muted mb-5">Ready to start your next project with us? Give us a call or send us an
-                        email and we will get back to you as soon as possible!</p>
-                </div>
-            </div>
-            <div class="row">
-                <div class="col-lg-4 ml-auto text-center mb-5 mb-lg-0">
-                    <i class="fas fa-phone fa-3x mb-3 text-muted"></i>
-                    <div>+1 (555) 123-4567</div>
-                </div>
-                <div class="col-lg-4 mr-auto text-center">
-                    <i class="fas fa-envelope fa-3x mb-3 text-muted"></i>
-                    <!-- Make sure to change the email address in BOTH the anchor text and the link target below!-->
-                    <a class="d-block" href="mailto:contact@yourwebsite.com">contact@yourwebsite.com</a>
-                </div>
-            </div>
-        </div>
     </section>
     <!-- Footer-->
     <footer class="bg-light py-5">

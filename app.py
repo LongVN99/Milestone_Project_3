@@ -10,42 +10,20 @@ if os.path.exists("env.py"):
 
 app = Flask(__name__)
 
-app.config["MONGO_DBNAME"] = os.environ.get(
-    "MONGO_DBNAME")  # grab the database
-# configure the actual connection string
-app.config["MONGO_URI"] = os.environ.get("MONGO_URI")
+app.config["MONGO_DBNAME"] = os.environ.get("MONGO_DBNAME")  # grab the database
+app.config["MONGO_URI"] = os.environ.get("MONGO_URI")   # configure the actual connection string
 app.secret_key = os.environ.get("SECRET_KEY")
-
+mongo = PyMongo(app)
 
 @app.route("/")
 @app.route("/get_books")
 def get_books():
     books = mongo.db.books.find()
-    return render_template("tasks.html", books=books)
+    return render_template("books.html", books=books)
 
 @app.route("/register", methods=["GET", "POST"])
 def register():
     return render_template("register.html")
-
-
-@app.route("/")
-def index():
-    return render_template("index.html")
-
-
-@app.route("/about")
-def about():
-    return render_template("about.html")
-
-
-@app.route("/products")
-def careers():
-    return render_template("products.html")
-
-
-@app.route("/contact")
-def contact():
-    return render_template("contact.html")
 
 
 if __name__ == "__main__":
