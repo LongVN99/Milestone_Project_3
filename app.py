@@ -15,7 +15,12 @@ app.config["MONGO_URI"] = os.environ.get("MONGO_URI")   # configure the actual c
 app.secret_key = os.environ.get("SECRET_KEY")
 mongo = PyMongo(app)
 
+
 @app.route("/")
+def index():
+    return render_template("index.html")
+
+
 @app.route("/get_books")
 def get_books():
     books = mongo.db.books.find()
