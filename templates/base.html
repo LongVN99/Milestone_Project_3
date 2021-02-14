@@ -22,18 +22,19 @@
         rel="stylesheet" />
 </head>
 
-<body id="page-top">
+<body>
     <!-- Navigation-->
     <nav class="navbar navbar-expand-lg navbar-light fixed-top py-3" id="mainNav">
         <div class="container">
-            <a class="navbar-brand js-scroll-trigger" href="#page-top">BookReviews</a>
+            <a class="navbar-brand js-scroll-trigger" href="{{ url_for('index') }}">BookReviews</a>
             <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse"
                 data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false"
                 aria-label="Toggle navigation"><span class="navbar-toggler-icon"></span></button>
             <div class="collapse navbar-collapse" id="navbarResponsive">
                 <ul class="navbar-nav ml-auto my-2 my-lg-0">
                     {% if session.user %}
-                    <li class="nav-item"><a class="nav-link" href="{{ url_for('recommendations') }}">Recommendations</a></li>
+                    <li class="nav-item"><a class="nav-link" href="{{ url_for('recommendations') }}">Recommendations</a>
+                    </li>
                     <li class="nav-item"><a class="nav-link" href="{{ url_for('logout') }}">Log Out</a></li>
                     {% else %}
                     <li class="nav-item"><a class="nav-link" href="{{ url_for('login') }}">Log In</a></li>
@@ -43,6 +44,17 @@
             </div>
         </div>
     </nav>
+    <!-- Masthead-->
+    <header class="masthead">
+        <div class="container h-100">
+            {% block masthead %}
+            {% endblock %}
+            {% block content %}
+            {% endblock %}
+        </div>
+    </header>
+    {% block about %}
+    {% endblock %}
     <section>
         <!-- flash messages -->
         {% with messages = get_flashed_messages() %}
@@ -57,18 +69,16 @@
     </section>
 
     <main class="container">
-        {% block content %}
-        {% endblock %}
     </main>
 
-    {% block masthead %}
-    {% endblock %}
-
     <!-- Footer-->
-    <footer class="bg-light py-5">
-        <div class="container">
-            <p class="copyright text-muted">Copyright &copy; BookReviews <span id="copyright"></span></p>
+    <footer class="bg-primary text-white text-center text-lg-start">
+        <!-- Copyright -->
+        <div class="text-center p-3" style="background-color: rgba(0, 0, 0, 0.2)">
+            <p class="copyright text-muted">Copyright &copy; <a class="text-white"
+                    href="{{ url_for('index') }}">BookReviews</a> <span id="copyright"></span></p>
         </div>
+        <!-- Copyright -->
     </footer>
     <!-- Bootstrap core JS-->
     <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
