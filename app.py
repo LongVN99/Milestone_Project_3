@@ -13,6 +13,7 @@ app = Flask(__name__)
 app.config["MONGO_DBNAME"] = os.environ.get("MONGO_DBNAME")  # grab the database
 app.config["MONGO_URI"] = os.environ.get("MONGO_URI")   # configure the actual connection string
 app.secret_key = os.environ.get("SECRET_KEY")
+
 mongo = PyMongo(app)
 
 
@@ -21,10 +22,11 @@ def index():
     return render_template("index.html")
 
 
-@app.route("/get_books")
-def get_books():
-    books = mongo.db.books.find()
-    return render_template("books.html", books=books)
+@app.route("/get_recommendations")
+def get_recommendations():
+    books = mongo.db.recommendations.find()
+    return render_template("recommendations.html", books=books)
+
 
 @app.route("/register", methods=["GET", "POST"])
 def register():

@@ -8,9 +8,6 @@
     <!-- Core theme CSS (includes Bootstrap)-->
     <link href="{{ url_for('static', filename='css/styles.css') }}" rel="stylesheet" />
     <link href="{{ url_for('static', filename='css/mystyles.css') }}" rel="stylesheet" />
-    <title>Book Reviews</title>
-    <!-- Favicon-->
-    <link rel="shortcut icon" type="image/png" href="assets/img/logo.png" />
     <!-- Font Awesome icons (free version)-->
     <script src="https://use.fontawesome.com/releases/v5.15.1/js/all.js" crossorigin="anonymous"></script>
     <!-- Google fonts-->
@@ -20,6 +17,7 @@
     <!-- Third party plugin CSS-->
     <link href="https://cdnjs.cloudflare.com/ajax/libs/magnific-popup.js/1.1.0/magnific-popup.min.css"
         rel="stylesheet" />
+    <title>BookReviews</title>
 </head>
 
 <body>
@@ -32,9 +30,11 @@
                 aria-label="Toggle navigation"><span class="navbar-toggler-icon"></span></button>
             <div class="collapse navbar-collapse" id="navbarResponsive">
                 <ul class="navbar-nav ml-auto my-2 my-lg-0">
-                    {% if session.user %}
-                    <li class="nav-item"><a class="nav-link" href="{{ url_for('recommendations') }}">Recommendations</a>
+                    <li class="nav-item"><a class="nav-link"
+                            href="{{ url_for('get_recommendations') }}">Recommendations</a>
                     </li>
+                    {% if session.user %}
+
                     <li class="nav-item"><a class="nav-link" href="{{ url_for('logout') }}">Log Out</a></li>
                     {% else %}
                     <li class="nav-item"><a class="nav-link" href="{{ url_for('login') }}">Log In</a></li>
