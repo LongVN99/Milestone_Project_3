@@ -236,7 +236,8 @@ margin-left: 4px;
     height: 40px;
 }
 
-.card_add a {
+.card_add a,
+.card_add button {
     margin: 5%;
     height: 45px;
 }

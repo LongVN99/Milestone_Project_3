@@ -149,7 +149,7 @@ def edit_book(book_id):
 
 @app.route("/delete_book/<book_id>")
 def delete_book(book_id):
-    mongo.db.tasks.remove({"_id": ObjectId(book_id)})
+    mongo.db.recommendations.remove({"_id": ObjectId(book_id)})
     flash("Book Successfully Removed")
     return redirect(url_for("recommendations"))
 
