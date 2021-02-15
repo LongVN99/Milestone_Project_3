@@ -20,13 +20,16 @@
             <strong>Recommended by: </strong><span class="rec_count">
                 {{ book.recommended_by }}</span><br>
             <div class="rec_btn_container">
-                <a class="btn btn-primary btn-xl js-scroll-trigger rec_btn" href=""><i class="far fa-minus-square"></i>
+                {% if session.user|lower == book.recommended_by|lower %}
+                <a class="btn btn-primary btn-xl js-scroll-trigger rec_btn"
+                    href="{{ url_for('delete_book', book_id=book._id )}}"><i class="far fa-minus-square"></i>
                     Remove
                 </a>
                 <a class="btn btn-primary btn-xl js-scroll-trigger rec_btn"
                     href="{{ url_for('edit_book', book_id=book._id )}}"><i class="fas fa-edit"></i>
                     Edit
                 </a>
+                {% endif %}
                 <a class="btn btn-primary btn-xl js-scroll-trigger rec_btn" href="{{ book.shop_link }}"
                     target="_blank"><i class="fas fa-shopping-cart"></i> Buy</a>
             </div>

@@ -80,6 +80,7 @@ box-shadow: 0 0 0 0 !important;
 
 }
 
+.cancel_btn,
 .add_btn,
 .edit_btn,
 .login_btn,
@@ -89,6 +90,7 @@ background-color: #FFC312;
 width: 100px;
 }
 
+.cancel_btn:hover,
 .add_btn:hover,
 .edit_btn:hover,
 .login_btn:hover,
@@ -234,8 +236,13 @@ margin-left: 4px;
     height: 40px;
 }
 
-.card_add button {
+.card_add a {
     margin: 5%;
-    height: 50px;
+    height: 45px;
 }
+
 /* End Add Book*/
+
+.cancel_btn {
+    background-color: lightgray;
+}
