@@ -80,12 +80,17 @@ box-shadow: 0 0 0 0 !important;
 
 }
 
+.add_btn,
+.edit_btn,
 .login_btn,
 .sign_up_btn{
 color: black;
 background-color: #FFC312;
 width: 100px;
 }
+
+.add_btn:hover,
+.edit_btn:hover,
 .login_btn:hover,
 .sign_up_btn:hover{
 color: black;
@@ -191,6 +196,11 @@ margin-left: 4px;
     width: 100%;
     margin-top: 10px;
 }
+}
+
+.card-main {
+    text-align: center;
+    color: #f4623a;
 }
 
 .rec_count {
