@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -18,6 +19,7 @@
         rel="stylesheet" />
     <title>BookReviews</title>
 </head>
+
 <body>
     <!-- Navigation-->
     <nav class="navbar navbar-expand-lg navbar-light fixed-top py-3" id="mainNav">
@@ -34,51 +36,52 @@
 
                     {% if session.user %}
 
-                        <li class="nav-item"><a class="nav-link" href="{{ url_for('logout') }}">Log Out</a></li>
+                    <li class="nav-item"><a class="nav-link" href="{{ url_for('logout') }}">Log Out</a></li>
 
                     {% else %}
 
-                        <li class="nav-item"><a class="nav-link" href="{{ url_for('login') }}">Log In</a></li>
-                        <li class="nav-item"><a class="nav-link" href="{{ url_for('register') }}">Register</a></li>
-                        
+                    <li class="nav-item"><a class="nav-link" href="{{ url_for('login') }}">Log In</a></li>
+                    <li class="nav-item"><a class="nav-link" href="{{ url_for('register') }}">Register</a></li>
+
                     {% endif %}
 
                 </ul>
             </div>
         </div>
     </nav>
-    <!-- Masthead-->
-    <header class="masthead">
-        <div>
-            <!-- flash messages -->
-            {% with messages = get_flashed_messages() %}
+
+    {% block recommendations %}
+
+        <!-- Masthead-->
+        <header class="masthead">
+            <div>
+                <!-- flash messages -->
+                {% with messages = get_flashed_messages() %}
                 {% if messages %}
-                    {% for message in messages %}
-                        <div class="row flashes">
-                            <h4 class="light-blue lighten-4 text-center">{{ message }}</h4>
-                        </div>
-                    {% endfor %}
+                {% for message in messages %}
+                <div class="row flashes">
+                    <h4 class="light-blue lighten-4 text-center">{{ message }}</h4>
+                </div>
+                {% endfor %}
                 {% endif %}
-            {% endwith %}
+                {% endwith %}
 
-        </div>
-        <div class="container h-100">
+            </div>
+            <div class="container h-100">
 
-            {% block masthead %}
-            {% endblock %}
-
-            <main class="container">
-
-                {% block content %}
+                {% block masthead %}
                 {% endblock %}
 
-                {% block recommendations %}
-                {% endblock %}
+                <main class="container">
 
-            </main>
-        </div>
+                    {% block content %}
+                    {% endblock %}
 
-    </header>
+                </main>
+            </div>
+        </header>
+
+    {% endblock %}
 
     {% block about %}
     {% endblock %}
@@ -104,4 +107,5 @@
         $("#copyright").text(new Date().getFullYear());
     </script>
 </body>
+
 </html>
