@@ -152,8 +152,8 @@ The goal in the design was to make it as easy as possible for non experience use
 The navigation bar is structured to get the right information as quickly as possible. The website itself is structured in hope of user feels ease while viewing and the database is also structured in order and in a clear way.
 
 ## Known Issues
-    * Unable to check if users provide the correct informations
-    * If book_cover is a wrong link the image will not be displayed
+* Unable to check if users provide the correct informations
+* If book_cover is a wrong link the image will not be displayed
 
 ## Deployment
 This site is hosted using GitHub pages, deployed directly from the master branch. The deployed site will update automatically upon new commits to the master branch. In order for the site to deploy correctly on GitHub pages, the landing page must be named index.html.
@@ -161,7 +161,7 @@ This site is hosted using GitHub pages, deployed directly from the master branch
 To run locally, you  can clone this repository directly into the editor of your choice by pasting the link into your terminal. To cut ties with this GitHub repository, type git remote rm origin into the terminal.
 
 ### `How to open this project`
-1. Copy this link " https://longvn99.github.io/Milestone_project_2/ "
+1. Copy this link "https://bookreviews-heroku.herokuapp.com/"
 1. Paste and open on a browser
 
 ### `How to open this project localy`
