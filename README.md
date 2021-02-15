@@ -1,27 +1,30 @@
 # BookReviews
 
-Enjoy reading, BookReviews can help you find the book you like. Users can see recommendations books here.
+Enjoy reading, BookReviews can help you find the book you like. 
 
 ## How It Works
-Tell us what titles or genres you’ve enjoyed in the past, and we’ll give you surprisingly insightful recommendations.
+
+By logging in users can see recommendations books and recommend book on BookReviews.
 
 <a name="demo"></a>
 
 ## Demo
 
-You can play this game right away by clicking
+You visit BookReviews right away by clicking
 [here](https://bookreviews-heroku.herokuapp.com/)
-<img src='./mockups/Mockup.png'></img>
+<img src='mockups/DEMO_BookReviews.png'></img>
+
+## Database design
+<img src='mockups/data_design.png'></img>
 
 ## User Experience (UX)
 To make the web simple for the user to understand and to give necessairy information about how to use the web and about the book provided.
 
 - ### User stories
     -   #### New user Goals
-        1. As a new user, I want to know what the web is.(BookReviews/about)
+        1. As a new user, I want to know what the web is.(BookReviews/home)
         2. As a new user, I want register an account.(register)
-        3. As a new user, I want to find my desire book. (search bar in recommendations)
-        4. As a new user, I want to look for recommendations books provides by BookReviews. (BookReviews/carousel)
+        3. As a new user, I want to look for recommendations books provides by BookReviews. (recommendations)
 
     -   #### Returning user Goals.
         1. As a returning user, I want to write reviews.
@@ -30,6 +33,7 @@ To make the web simple for the user to understand and to give necessairy informa
         1. As a frequent user, I want to log in my account. (account)
         2. As a frequent user, I want to views book on multiple device. (responsive)
         3. As a frequent user, I want to recommend book. (recommendations)
+        4. As a frequent user, I want to check my recommended books. (profile)
 
 -   ### Design
     -   #### Colour Scheme
@@ -63,7 +67,7 @@ My theme is taken from this website. [startbootstrap creative](https://startboot
 I also inspired certain way to code from Code Institute [Acknowledgements](#Ack)
 
 ## Testing
--   [W3C Markup Validator]() - [Results]()
+-   [W3C Markup Validator](https://validator.w3.org/) - [Results](validator/homepage.png)
 
 ### Testing User Stories from User Experience (UX) Section
 -   #### New user Goals
@@ -73,11 +77,8 @@ I also inspired certain way to code from Code Institute [Acknowledgements](#Ack)
     2. As a new user, I want register an account.(register)
         * User can register an account, data will be stored in mongoDB's Database (users)
 
-    3. As a new user, I want to find my desire book. (search bar in recommendations)
-        * The search bar allow user to filter the Database provided by BookReviews
-
-    4. As a new user, I want to look for recommendations books provides by BookReviews. (BookReviews/carousel)
-        * The carousel in BookReviews's homepage sorts the Database from the most recommended book to the least one.
+    3. As a new user, I want to look for recommendations books provides by BookReviews. (recommendations)
+        * In BookReviews's recommendations page user can see all the book in BookReviews's Database.
 
 -   #### Returning user Goals.
     1.  As a returning user, I want to write reviews.
@@ -97,7 +98,9 @@ I also inspired certain way to code from Code Institute [Acknowledgements](#Ack)
         * By clicking on recommended button, the recommended count will be increased.
         * User must login before to recommend book.
         * User can recommend the same book once per account.
-        
+
+    4. As a frequent user, I want to check my recommended books. (profile)
+        * After logging in BookReviews users are able to check their profile which displays book(s) that this user accout added to BookReviews recommendations.
 
 ### Further Testing
 * Registered account stores in mongoDB. [startbootstrap creative](https://startbootstrap.com/theme/creative)
@@ -105,6 +108,8 @@ I also inspired certain way to code from Code Institute [Acknowledgements](#Ack)
 * All links were tested. Internal links all work. External links all work and open in new window.
 * The data displayed correctly, all buttons link to a correct destination.
 * All the pages are responsive on all screen sizes.
+* Users are able to Edit, Add, Remove books on the website after logging in.
+* Users can't Edit or Remove books which others added.
 
 ## Strategy
 
@@ -147,6 +152,8 @@ The goal in the design was to make it as easy as possible for non experience use
 The navigation bar is structured to get the right information as quickly as possible. The website itself is structured in hope of user feels ease while viewing and the database is also structured in order and in a clear way.
 
 ## Known Issues
+    * Unable to check if users provide the correct informations
+    * If book_cover is a wrong link the image will not be displayed
 
 ## Deployment
 This site is hosted using GitHub pages, deployed directly from the master branch. The deployed site will update automatically upon new commits to the master branch. In order for the site to deploy correctly on GitHub pages, the landing page must be named index.html.
@@ -193,21 +200,21 @@ Click [Here](https://help.github.com/en/github/creating-cloning-and-archiving-re
 
 By using Heroku platform for BookReviews, the following steps were taken:
 
-# Create A Heroku App
+### Create A Heroku App
 
 * Navigated to [Heroku.com](https://www.heroku.com/) in web browser. Once there, clicked on "Sign Up" and created a new account.
 * Chose 'Python' as Primary Development Language.
 * Selected "**Create new app**" from the Heroku dashboard.
 * Filled in the unique app name on the form and selected corresponding region, then clicked on "**Create app**"
 
-# Install Heroku CLI
+### Install Heroku CLI
 
 I used the Heroku command-line interface, within the Terminal:
 
 * `npm install -g heroku` - to install Heroku  
 * Type: `heroku login -i` then login to created account
 
-# Connect Git remote
+### Connect Git remote
 
 we can either link our local Git repository with Heroku, or setup Automatic
 Deployment from GitHub.
@@ -220,7 +227,7 @@ To link the local Git repository to Heroku:
 * `git commit -m "Deployment to Heroku"` - to commit changes.
 * `git push -u heroku main` - to push code directly to Heroku.
 
-# Adding A requirements.txt File
+### Adding A requirements.txt File
 
 To add the list of Python dependencies that the project needs in order to run successfully and detect the language:
 
@@ -229,7 +236,7 @@ To add the list of Python dependencies that the project needs in order to run su
 * `git commit -m "Add requirements.txt"` - to commit changes.
 * `git push -u heroku main` - to push file to Heroku.
 
-# Adding A Procfile
+### Adding A Procfile
 
 To inform Heroku on how to run the application and which file runs it the **Procfile** was installed:
 
@@ -249,6 +256,6 @@ Code was modified to better fit my needs.
 
 <a name="Ack"></a>
 -   ### Acknowledgements
-    * Game sound inspired from a YouTube video (https://www.youtube.com/watch?v=3uuQ3g92oPQ)
-    * Flip 3D effect inspired from a YouTube video (https://www.youtube.com/watch?v=ZniVgo8U7ek)
-    * Great help from my mentor to find the game bug and to fix it.
+    * Inspiration and base code was derived from the Mini Project section of the [Code Institute](https://courses.codeinstitute.net/) course.
+Code was modified to better fit my needs.
+    * Special thanks to my mentor Oluwafemi Medalen for supporting me during the project
