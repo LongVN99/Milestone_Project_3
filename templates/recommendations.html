@@ -20,8 +20,11 @@
             <strong>Recommended: </strong><span class="rec_count">
                 {{ book.recommended_count }}</span><br>
             <div class="rec_btn_container">
-                <button class="btn btn-primary btn-xl js-scroll-trigger rec_btn"><i class="fas fa-thumbs-up"></i>
-                    Recommend
+                <button class="btn btn-primary btn-xl js-scroll-trigger rec_btn"><i class="far fa-minus-square"></i>>
+                    Remove
+                </button>
+                <button class="btn btn-primary btn-xl js-scroll-trigger rec_btn"><i class="far fa-minus-square"></i>>
+                    Edit
                 </button>
                 <a class="btn btn-primary btn-xl js-scroll-trigger rec_btn" href="{{ book.shop_link }}"
                     target="_blank"><i class="fas fa-shopping-cart"></i> Buy</a>

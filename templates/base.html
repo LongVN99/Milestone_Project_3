@@ -39,6 +39,7 @@
 
                     <li class="nav-item"><a class="nav-link"
                             href="{{ url_for('profile', username=session['user']) }}">Profile</a></li>
+                    <li class="nav-item"><a class="nav-link" href="{{ url_for('add_book') }}">Add Book</a></li>
                     <li class="nav-item"><a class="nav-link" href="{{ url_for('logout') }}">Log Out</a></li>
 
                     {% else %}
@@ -97,6 +98,9 @@
                     href="{{ url_for('index') }}">BookReviews</a> <span id="copyright"></span></p>
         </div>
     </footer>
+    <script>
+        $("#copyright").text(new Date().getFullYear());
+    </script>
     <!-- Bootstrap core JS-->
     <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/js/bootstrap.bundle.min.js"></script>
@@ -105,10 +109,7 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/magnific-popup.js/1.1.0/jquery.magnific-popup.min.js"></script>
     <!-- Core theme JS-->
     <script src="{{ url_for('static', filename='js/scripts.js') }}"></script>
-    <!-- Get current year-->
-    <script>
-        $("#copyright").text(new Date().getFullYear());
-    </script>
+    <script src="https://code.jquery.com/jquery-3.5.1.js"></script>
 </body>
 
 </html>

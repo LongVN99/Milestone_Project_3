@@ -102,6 +102,22 @@ def profile(username):
     return redirect(url_for("login"))
 
 
+@app.route("/add_book", methods=["GET", "POST"])
+def add_book():
+    if request.method == "POST":
+        book = {
+            "category_name": request.form.get("category_name"),
+            "task_name": request.form.get("task_name"),
+            "created_by": session["user"]
+        }
+        mongo.db.books.insert_one(book)
+        flash("Book Successfully Added")
+        return redirect(url_for("recommendations"))
+
+    categories = mongo.db.categories.find().sort("category_name", 1)
+    return render_template("add_book.html", categories=categories)
+
+
 if __name__ == "__main__":
     app.run(host=os.environ.get("IP"),
             port=int(os.environ.get("PORT")),

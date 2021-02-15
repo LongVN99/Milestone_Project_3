@@ -199,3 +199,33 @@ margin-left: 4px;
     font-size: 1.5rem;
 }
 /* End Recommendations */
+.white-text {
+    color: white;
+}
+
+.white-icon{
+    color: white;
+    margin-left: 5px;
+    margin-top: 5px;
+}
+
+.card_add {
+    height: auto;
+    margin-top: auto;
+    margin-bottom: auto;
+    width: 100%;
+    padding-bottom: 20px;
+    background-color: rgba(0,0,0,0.5) !important;
+}
+
+.card_add .input-group input {
+    min-width: 250px;
+    width: 100%;
+    height: 40px;
+}
+
+.card_add button {
+    margin: 5%;
+    height: 50px;
+}
+/* End Add Book*/
