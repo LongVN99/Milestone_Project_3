@@ -101,3 +101,10 @@ margin-left: 4px;
     width: 200px;
 }
 }
+
+.flashes h4 {
+    line-height: 2.5;
+    background-color: lightblue;
+    width: 100%;
+    top: 5%;
+}

@@ -10,8 +10,10 @@ if os.path.exists("env.py"):
 
 app = Flask(__name__)
 
-app.config["MONGO_DBNAME"] = os.environ.get("MONGO_DBNAME")  # grab the database
-app.config["MONGO_URI"] = os.environ.get("MONGO_URI")   # configure the actual connection string
+app.config["MONGO_DBNAME"] = os.environ.get(
+    "MONGO_DBNAME")  # grab the database
+# configure the actual connection string
+app.config["MONGO_URI"] = os.environ.get("MONGO_URI")
 app.secret_key = os.environ.get("SECRET_KEY")
 
 mongo = PyMongo(app)
@@ -48,7 +50,7 @@ def register():
         # put the new user into 'session' cookie to indentify the user
         session["user"] = request.form.get("username").lower()
         flash("Registration Successful!")
-    return render_template("register.html")
+    return render_template("login.html")
 
 
 @app.route("/login", methods=["GET", "POST"])
@@ -61,9 +63,10 @@ def login():
         if existing_user:
             # ensure hashed password matches user input
             if check_password_hash(
-                existing_user["password"], request.form.get("password")):
-                    session["user"] = request.form.get("username").lower()
-                    flash("Welcome, {} to BookReviews".format(request.form.get("username")))
+                    existing_user["password"], request.form.get("password")):
+                session["user"] = request.form.get("username").lower()
+                return redirect(url_for(
+                    "index", username=session["user"]))
             else:
                 # invalid password match
                 flash("Incorrect Username and/or Password")
@@ -75,6 +78,14 @@ def login():
             return redirect(url_for("login"))
 
     return render_template("login.html")
+
+
+@app.route("/logout")
+def logout():
+    # remove user from session cookie
+    flash("You have been logged out")
+    session.pop("user")
+    return redirect(url_for("login"))
 
 
 if __name__ == "__main__":
