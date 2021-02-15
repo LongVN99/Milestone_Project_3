@@ -62,9 +62,3 @@
 
 })(jQuery); // End of use strict
 
-
-$(document).ready(function () {
-    $(function () {
-        $('.datapicker').datetimepicker();
-    });
-});
