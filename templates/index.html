@@ -22,7 +22,7 @@
                 <hr class="divider light my-4" />
                 <p class="text-white-50 mb-4">Tell us what titles or genres you’ve enjoyed in the past, and we’ll
                     give you surprisingly insightful recommendations. </p>
-                <a class="btn btn-light btn-xl js-scroll-trigger" href="#books">Get Started!</a>
+                <a class="btn btn-light btn-xl js-scroll-trigger" href="{{ url_for('get_recommendations') }}">Get Started!</a>
             </div>
         </div>
     </div>
@@ -33,14 +33,6 @@
         <h2 class="text-center mt-0">Recommendations</h2>
         <hr class="divider my-4" />
     </div>
-    <!-- Search bar-->
-    <div class="search-container">
-        <form action="/action_page.php">
-            <input type="text" placeholder="Search.." name="search">
-            <button type="submit"><i class="fa fa-search"></i></button>
-        </form>
-    </div>
-    <!-- Reviews-->
     <!-- Recommendations-->
     <section class="recommendations">
         <!-- Carousel bootstrap-->
@@ -68,7 +60,7 @@
                 </div>
                 <div class="carousel-item">
                     <div class="row justify-content-center">
-                        <div class="col-3">
+                        <div class="col-3 ">
                             <img class="d-block"
                                 src="static/assets/img/books/Harry_Potter_and_the_Chamber_of_Secrets.jpg"
                                 alt="Harry Potter and the Chamber of Secrets">

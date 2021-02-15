@@ -2,8 +2,12 @@
 {% block content %}
 <h1>Books</h1>
 {% for book in books %}
-    {{ book.name }}<br>
-    {{ book.author }}<br>
-    {{ book.recommended_count }}<br>
+{{ book.name }}<br>
+{{ book.author }}<br>
+{{ book.publicher }}<br>
+{{ book.genre }}<br>
+{{ book.publication_date }}<br>
+{{ book.recommended_count }}<br>
+{{ book.book_cover }}<br>
 {% endfor %}
 {% endblock %}a
