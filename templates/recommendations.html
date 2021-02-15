@@ -2,18 +2,25 @@
 {% block recommendations %}
 <div class="rec_container bg-white rounded">
     <div class="rec_items">
-        <h1>Books</h1>
+        <h3>Recommendations</h3>
+        <hr class="rec_divider my-5" />
         {% for book in books %}
-        <div class="book_cover"> 
-            <img src="{{ book.book_cover }}" alt="{{ book.name }}">
+        <div class="row">
+            <div class="col col-lg-4 col-sm-12 book_cover">
+                <img src="{{ book.book_cover }}" alt="{{ book.name }}">
+            </div>
+            <div class="col col-lg-8 col-sm-12">
+                <strong>Name: </strong>{{ book.name }}<br>
+                <strong>Author: </strong>{{ book.author }}<br>
+                <strong>Publisher: </strong>{{ book.publisher }}<br>
+                <strong>Genre: </strong>{{ book.genre }}<br>
+                <strong>Publication date: </strong>{{ book.publication_date }}<br>
+                <div class="rec_btn"> 
+                    <button class="btn btn-primary btn-xl js-scroll-trigger">Recommended: <span class="rec_count"> {{ book.recommended_count }}</span></button>
+                </div>
+            </div>
         </div>
-        {{ book.name }}<br>
-        {{ book.author }}<br>
-        {{ book.publisher }}<br>
-        {{ book.genre }}<br>
-        {{ book.publication_date }}<br>
-        {{ book.recommended_count }}<br>
-
+        <hr>
         {% endfor %}
     </div>
 </div>

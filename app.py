@@ -50,7 +50,7 @@ def register():
         # put the new user into 'session' cookie to indentify the user
         session["user"] = request.form.get("username").lower()
         flash("Registration Successful!")
-    return render_template("login.html")
+    return render_template("register.html")
 
 
 @app.route("/login", methods=["GET", "POST"])

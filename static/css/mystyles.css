@@ -1,3 +1,27 @@
+/* Masthead*/
+header.masthead {
+  background: linear-gradient(to bottom, rgba(92, 77, 66, 0.8) 0%, rgba(92, 77, 66, 0.8) 100%), url("../assets/img/book_bg_2.png"); 
+  padding-top: 10rem;
+  padding-bottom: calc(10rem - 4.5rem);
+  background-position: center;
+  background-repeat: no-repeat;
+  background-attachment: scroll;
+  background-size: cover;
+}
+
+@media only screen and (max-width: 600px) {
+header.masthead {
+height:100vh
+}
+}
+
+@media only screen and (max-width: 1000px) {
+header.masthead {
+height:100vh
+}
+}
+/* End Masthead*/
+
 /* Carousel */
 .fixed-height img{
     height: 300px !important;
@@ -28,6 +52,7 @@
     margin-top: -50px;
     opacity: 50%;
 }
+/* End Carousel */
 
 /* Bootstrap login styles*/
 html,body{
@@ -88,6 +113,7 @@ color: white;
 margin-left: 4px;
 }
 /* End bootstrap login styles*/
+
 .card-header{
     margin-bottom: 35px;
 }
@@ -108,7 +134,9 @@ margin-left: 4px;
     width: 100%;
     top: 5%;
 }
+/* End login/register styles*/
 
+/* Recommendations */
 .rec_container {
     height: 99%;
     overflow: scroll;
@@ -118,6 +146,43 @@ margin-left: 4px;
 
 .rec_items {
     min-height: 500px;
-    width: 50%;
     margin: 2rem;
 }
+
+.book_cover {
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.book_cover img {
+    height: 85%;
+    width: 62%;
+}
+
+@media only screen and (max-width: 600px) {
+.book_cover img {
+    height: auto;
+    width: 180px;
+      display: block;
+  margin-left: auto;
+  margin-right: auto;
+    padding-bottom: 25px;
+}
+}
+
+.rec_divider {
+    border-width: 0.2rem;
+    border-color: #f4623a;
+}
+
+.rec_btn {
+    float: right;
+    margin-top: 30px;
+}
+
+.rec_count {
+    color: royalblue;
+    padding-left: 10px;
+    font-size: 1.5rem;
+}
+/* End Recommendations */
