@@ -172,8 +172,8 @@ input:focus{
 @media only screen and (max-width: 1000px) {
 .book_cover img {
     height: auto;
-    width: 60%;
-    margin-bottom: 15px;
+    width: 280px;
+    margin-bottom: 20px;
 }
 }
 
