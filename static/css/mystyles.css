@@ -53,7 +53,7 @@ html,body{
 .container{
     height: 100%;
     align-content: center;
-    overflow: hidden;
+    overflow: hidden !important;
 }
 
 .card{
