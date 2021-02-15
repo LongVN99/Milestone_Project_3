@@ -1,49 +1,49 @@
 {% extends "base.html" %}
 {% block recommendations %}
-<div class="bg-img"></div>
-<div class="rec_container bg-white mx-3">
-    <h3>Recommendations</h3>
-    <hr class="rec_divider my-5 " />
+    <div class="bg-img"></div>
+    <div class="rec_container bg-white mx-3">
+        <h3>Recommendations</h3>
+        <hr class="rec_divider my-5 " />
 
-    {% for book in books %}
+        {% for book in books %}
 
-    <div class="row">
-        <div class="col col-lg-4 col-sm-12 book_cover">
-            <img src="{{ book.book_cover }}" alt="{{ book.name }}">
-        </div>
-        <div class="col col-lg-8 col-sm-12">
-            <strong>Name: </strong>{{ book.name }}<br>
-            <strong>Author: </strong>{{ book.author }}<br>
-            <strong>Publisher: </strong>{{ book.publisher }}<br>
-            <strong>Genre: </strong>{{ book.genre }}<br>
-            <strong>Publication date: </strong>{{ book.publication_date }}<br>
-            <strong>Recommended by: </strong><span class="rec_count">
-                {{ book.recommended_by }}</span><br>
-            <div class="rec_btn_container">
-                {% if session.user|lower == book.recommended_by|lower %}
-                <a class="btn btn-primary btn-xl js-scroll-trigger rec_btn"
-                    href="{{ url_for('delete_book', book_id=book._id )}}"><i class="far fa-minus-square"></i>
-                    Remove
-                </a>
-                <a class="btn btn-primary btn-xl js-scroll-trigger rec_btn"
-                    href="{{ url_for('edit_book', book_id=book._id )}}"><i class="fas fa-edit"></i>
-                    Edit
-                </a>
-                {% endif %}
-                <a class="btn btn-primary btn-xl js-scroll-trigger rec_btn" href="{{ book.shop_link }}"
-                    target="_blank"><i class="fas fa-shopping-cart"></i> Buy</a>
+            <div class="row">
+                <div class="col col-lg-4 col-sm-12 book_cover">
+                    <img src="{{ book.book_cover }}" alt="{{ book.name }}">
+                </div>
+                <div class="col col-lg-8 col-sm-12">
+                    <strong>Name: </strong>{{ book.name }}<br>
+                    <strong>Author: </strong>{{ book.author }}<br>
+                    <strong>Publisher: </strong>{{ book.publisher }}<br>
+                    <strong>Genre: </strong>{{ book.genre }}<br>
+                    <strong>Publication date: </strong>{{ book.publication_date }}<br>
+                    <strong>Recommended by: </strong><span class="rec_count">
+                        {{ book.recommended_by }}</span><br>
+                    <div class="rec_btn_container">
+                        {% if session.user|lower == book.recommended_by|lower %}
+                            <a class="btn btn-primary btn-xl js-scroll-trigger rec_btn"
+                                href="{{ url_for('delete_book', book_id=book._id )}}"><i class="far fa-minus-square"></i>
+                                Remove
+                            </a>
+                            <a class="btn btn-primary btn-xl js-scroll-trigger rec_btn"
+                                href="{{ url_for('edit_book', book_id=book._id )}}"><i class="fas fa-edit"></i>
+                                Edit
+                            </a>
+                        {% endif %}
+                        <a class="btn btn-primary btn-xl js-scroll-trigger rec_btn" href="{{ book.shop_link }}"
+                            target="_blank"><i class="fas fa-shopping-cart"></i> Buy</a>
+                    </div>
+                </div>
             </div>
-        </div>
+
+            {% if loop.index != loop.length %}
+
+                <hr>
+
+            {% endif %}
+
+        {% endfor %}
+
     </div>
-
-    {% if loop.index != loop.length %}
-
-    <hr>
-
-    {% endif %}
-
-    {% endfor %}
-
-</div>
 
 {% endblock %}

@@ -247,3 +247,7 @@ margin-left: 4px;
 .cancel_btn {
     background-color: lightgray;
 }
+
+.username {
+    color: #f4623a;
+}
