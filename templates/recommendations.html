@@ -1,13 +1,20 @@
 {% extends "base.html" %}
-{% block content %}
-<h1>Books</h1>
-{% for book in books %}
-{{ book.name }}<br>
-{{ book.author }}<br>
-{{ book.publicher }}<br>
-{{ book.genre }}<br>
-{{ book.publication_date }}<br>
-{{ book.recommended_count }}<br>
-{{ book.book_cover }}<br>
-{% endfor %}
+{% block recommendations %}
+<div class="rec_container bg-white rounded">
+    <div class="rec_items">
+        <h1>Books</h1>
+        {% for book in books %}
+        <div class="book_cover"> 
+            <img src="{{ book.book_cover }}" alt="{{ book.name }}">
+        </div>
+        {{ book.name }}<br>
+        {{ book.author }}<br>
+        {{ book.publisher }}<br>
+        {{ book.genre }}<br>
+        {{ book.publication_date }}<br>
+        {{ book.recommended_count }}<br>
+
+        {% endfor %}
+    </div>
+</div>
 {% endblock %}

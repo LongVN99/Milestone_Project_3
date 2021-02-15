@@ -30,11 +30,10 @@
                 aria-label="Toggle navigation"><span class="navbar-toggler-icon"></span></button>
             <div class="collapse navbar-collapse" id="navbarResponsive">
                 <ul class="navbar-nav ml-auto my-2 my-lg-0">
-
-                    {% if session.user %}
                     <li class="nav-item"><a class="nav-link"
                             href="{{ url_for('get_recommendations') }}">Recommendations</a>
                     </li>
+                    {% if session.user %}
                     <li class="nav-item"><a class="nav-link" href="{{ url_for('logout') }}">Log Out</a></li>
                     {% else %}
                     <li class="nav-item"><a class="nav-link" href="{{ url_for('login') }}">Log In</a></li>
@@ -46,6 +45,7 @@
     </nav>
     <!-- Masthead-->
     <header class="masthead">
+
         <div>
             <!-- flash messages -->
             {% with messages = get_flashed_messages() %}
@@ -64,8 +64,11 @@
             <main class="container">
                 {% block content %}
                 {% endblock %}
+                {% block recommendations %}
+                {% endblock %}
             </main>
         </div>
+
     </header>
     {% block about %}
     {% endblock %}
