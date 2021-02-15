@@ -1,10 +1,14 @@
-@app.route("/profile/<username>", methods=["GET", "POST"])
-def profile(username):
-    # grab the session user's username from db
-    username = mongo.db.users.find_one(
-        {"username": session["user"]})["username"]
+{% extends "base.html" %}
+{% block content %}
 
-    if session["user"]:
-        return render_template("profile.html", username=username)
+    <div class="row">
+        <div class="col s12 m8 offset-m2">
+            <div class="card-panel">
+                <h3 class="center-align text-white">
+                    {{ username }}'s Profile
+                </h3>
+            </div>
+        </div>
+    </div>
 
-    return redirect(url_for("login"))
+{% endblock %}

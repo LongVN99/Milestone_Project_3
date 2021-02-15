@@ -24,8 +24,8 @@ def index():
     return render_template("index.html")
 
 
-@app.route("/get_recommendations")
-def get_recommendations():
+@app.route("/recommendations")
+def recommendations():
     books = mongo.db.recommendations.find()
     return render_template("recommendations.html", books=books)
 
@@ -50,6 +50,8 @@ def register():
         # put the new user into 'session' cookie to indentify the user
         session["user"] = request.form.get("username").lower()
         flash("Registration Successful!")
+        return redirect(url_for("profile", username=session["user"]))
+
     return render_template("register.html")
 
 
@@ -66,7 +68,7 @@ def login():
                     existing_user["password"], request.form.get("password")):
                 session["user"] = request.form.get("username").lower()
                 return redirect(url_for(
-                    "index", username=session["user"]))
+                    "profile", username=session["user"]))
             else:
                 # invalid password match
                 flash("Incorrect Username and/or Password")

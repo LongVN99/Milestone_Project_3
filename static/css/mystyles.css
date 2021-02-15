@@ -30,7 +30,7 @@ height:100vh
 
 .carousel-item .col-3 img {
     margin: 2px;
-            margin-left: auto;
+    margin-left: auto;
     margin-right: auto;
 }
 
@@ -125,7 +125,7 @@ margin-left: 4px;
 
 /* Recommendations */
 .rec_container {
-    top: 100px;
+    display: block;
     margin-top: 100px;
 }
 
@@ -133,6 +133,11 @@ margin-left: 4px;
     background-image: url('../assets/img/book_bg_2.png');
     background-size: cover;
     background-repeat: no-repeat;
+    width: 100%;
+    min-height: 100px;
+    position: fixed;
+    z-index: 1;
+    top:-30px;
 }
 
 .book_cover {
@@ -141,18 +146,19 @@ margin-left: 4px;
 }
 
 .book_cover img {
-    height: 85%;
-    width: 62%;
+    height: auto;   
+    width: 240px;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    padding-bottom: 20px;
+    margin-top: -10px;
 }
 
 @media only screen and (max-width: 600px) {
 .book_cover img {
     height: auto;
     width: 210px;
-    display: block;
-    margin-left: auto;
-    margin-right: auto;
-    padding-bottom: 25px;
 }
 }
 

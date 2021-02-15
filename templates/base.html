@@ -30,12 +30,15 @@
                 aria-label="Toggle navigation"><span class="navbar-toggler-icon"></span></button>
             <div class="collapse navbar-collapse" id="navbarResponsive">
                 <ul class="navbar-nav ml-auto my-2 my-lg-0">
-                    <li class="nav-item"><a class="nav-link"
-                            href="{{ url_for('get_recommendations') }}">Recommendations</a>
+                    <li class="nav-item"><a class="nav-link" href="{{ url_for('index') }}">Home</a>
+                    </li>
+                    <li class="nav-item"><a class="nav-link" href="{{ url_for('recommendations') }}">Recommendations</a>
                     </li>
 
                     {% if session.user %}
 
+                    <li class="nav-item"><a class="nav-link"
+                            href="{{ url_for('profile', username=session['user']) }}">Profile</a></li>
                     <li class="nav-item"><a class="nav-link" href="{{ url_for('logout') }}">Log Out</a></li>
 
                     {% else %}
@@ -52,34 +55,34 @@
 
     {% block recommendations %}
 
-        <!-- Masthead-->
-        <header class="masthead">
-            <div>
-                <!-- flash messages -->
-                {% with messages = get_flashed_messages() %}
-                {% if messages %}
-                {% for message in messages %}
-                <div class="row flashes">
-                    <h4 class="light-blue lighten-4 text-center">{{ message }}</h4>
-                </div>
-                {% endfor %}
-                {% endif %}
-                {% endwith %}
-
+    <!-- Masthead-->
+    <header class="masthead">
+        <div>
+            <!-- flash messages -->
+            {% with messages = get_flashed_messages() %}
+            {% if messages %}
+            {% for message in messages %}
+            <div class="row flashes">
+                <h4 class="light-blue lighten-4 text-center">{{ message }}</h4>
             </div>
-            <div class="container h-100">
+            {% endfor %}
+            {% endif %}
+            {% endwith %}
 
-                {% block masthead %}
+        </div>
+        <div class="container h-100">
+
+            {% block masthead %}
+            {% endblock %}
+
+            <main class="container">
+
+                {% block content %}
                 {% endblock %}
 
-                <main class="container">
-
-                    {% block content %}
-                    {% endblock %}
-
-                </main>
-            </div>
-        </header>
+            </main>
+        </div>
+    </header>
 
     {% endblock %}
 
