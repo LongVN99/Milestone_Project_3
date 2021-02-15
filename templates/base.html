@@ -37,15 +37,15 @@
 
                     {% if session.user %}
 
-                    <li class="nav-item"><a class="nav-link"
-                            href="{{ url_for('profile', username=session['user']) }}">Profile</a></li>
-                    <li class="nav-item"><a class="nav-link" href="{{ url_for('add_book') }}">Add Book</a></li>
-                    <li class="nav-item"><a class="nav-link" href="{{ url_for('logout') }}">Log Out</a></li>
+                        <li class="nav-item"><a class="nav-link"
+                                href="{{ url_for('profile', username=session['user']) }}">Profile</a></li>
+                        <li class="nav-item"><a class="nav-link" href="{{ url_for('add_book') }}">Add Book</a></li>
+                        <li class="nav-item"><a class="nav-link" href="{{ url_for('logout') }}">Log Out</a></li>
 
                     {% else %}
 
-                    <li class="nav-item"><a class="nav-link" href="{{ url_for('login') }}">Log In</a></li>
-                    <li class="nav-item"><a class="nav-link" href="{{ url_for('register') }}">Register</a></li>
+                        <li class="nav-item"><a class="nav-link" href="{{ url_for('login') }}">Log In</a></li>
+                        <li class="nav-item"><a class="nav-link" href="{{ url_for('register') }}">Register</a></li>
 
                     {% endif %}
 
@@ -54,42 +54,45 @@
         </div>
     </nav>
 
+    <!-- recommendations block-->
     {% block recommendations %}
 
-    <!-- Masthead-->
-    <header class="masthead">
-        <div>
-            <!-- flash messages -->
-            {% with messages = get_flashed_messages() %}
-            {% if messages %}
-            {% for message in messages %}
-            <div class="row flashes">
-                <h4 class="light-blue lighten-4 text-center">{{ message }}</h4>
+        <!-- Masthead-->
+        <header class="masthead">
+            <div>
+                <!-- flash messages -->
+                {% with messages = get_flashed_messages() %}
+                    {% if messages %}
+                        {% for message in messages %}
+                            <div class="row flashes">
+                                <h4 class="light-blue lighten-4 text-center">{{ message }}</h4>
+                            </div>
+                        {% endfor %}
+                    {% endif %}
+                {% endwith %}
+
             </div>
-            {% endfor %}
-            {% endif %}
-            {% endwith %}
+            <div class="container h-100">
 
-        </div>
-        <div class="container h-100">
-
-            {% block masthead %}
-            {% endblock %}
-
-            <main class="container">
-
-                {% block content %}
+                {% block masthead %}
                 {% endblock %}
 
-            </main>
-        </div>
-    </header>
+                <main class="container">
+
+                    {% block content %}
+                    {% endblock %}
+
+                </main>
+            </div>
+        </header>
 
     {% endblock %}
+    <!-- End recommendations block-->
 
+    <!-- About block -->
     {% block about %}
     {% endblock %}
-
+    
     <!-- Footer-->
     <footer class="bg-primary text-white text-center text-lg-start">
         <!-- Copyright -->
