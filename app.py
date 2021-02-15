@@ -7,6 +7,8 @@ from bson.objectid import ObjectId
 from werkzeug.security import generate_password_hash, check_password_hash
 if os.path.exists("env.py"):
     import env
+import datetime
+year = datetime.datetime.today().year
 
 app = Flask(__name__)
 
@@ -105,12 +107,20 @@ def profile(username):
 @app.route("/add_book", methods=["GET", "POST"])
 def add_book():
     if request.method == "POST":
+        # define our dict
         book = {
             "category_name": request.form.get("category_name"),
-            "task_name": request.form.get("task_name"),
-            "created_by": session["user"]
+            "name": request.form.get("name"),
+            "author": request.form.get("author"),
+            "publisher": request.form.get("publisher"),
+            "genre": request.form.get("genre"),
+            "publication_date": request.form.get("publication_date"),
+            "book_cover": request.form.get("book_cover"),
+            "shop_link": request.form.get("shop_link"),
+            "recommended_by": session["user"],
+            "date_added": year,
         }
-        mongo.db.books.insert_one(book)
+        mongo.db.recommendations.insert_one(book)
         flash("Book Successfully Added")
         return redirect(url_for("recommendations"))
 
