@@ -162,11 +162,19 @@ margin-left: 4px;
 @media only screen and (max-width: 600px) {
 .book_cover img {
     height: auto;
-    width: 180px;
+    width: 210px;
       display: block;
   margin-left: auto;
   margin-right: auto;
     padding-bottom: 25px;
+}
+}
+
+@media only screen and (max-width: 1000px) {
+.book_cover img {
+    height: auto;
+    width: 60%;
+    margin-bottom: 15px;
 }
 }
 
@@ -175,9 +183,22 @@ margin-left: 4px;
     border-color: #f4623a;
 }
 
-.rec_btn {
+.rec_btn_container {
     float: right;
     margin-top: 30px;
+}
+
+.rec_btn {
+    width: 200px;
+    margin-top: 10px;
+}
+
+
+@media only screen and (max-width: 600px) {
+.rec_btn {
+    width: 100%;
+    margin-top: 10px;
+}
 }
 
 .rec_count {
