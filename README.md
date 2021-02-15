@@ -63,8 +63,8 @@ To make the web simple for the user to understand and to give necessairy informa
     * Safari *(9.0)*
 
 ##  Code
-My theme is taken from this website. [startbootstrap creative](https://startbootstrap.com/theme/creative)
-I also inspired certain way to code from Code Institute [Acknowledgements](#Ack)
+- My theme is taken from this website. [Startbootstrap creative](https://startbootstrap.com/theme/creative)
+- I also inspired certain way to code from Code Institute. [Acknowledgements](#Ack)
 
 ## Testing
 -   [W3C Markup Validator](https://validator.w3.org/) - [Results](validator/homepage.png)
