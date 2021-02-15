@@ -1,10 +1,13 @@
 {% extends "base.html" %}
 {% block recommendations %}
+
 <div class="rec_container bg-white rounded">
     <div class="rec_items">
         <h3>Recommendations</h3>
         <hr class="rec_divider my-5" />
+
         {% for book in books %}
+
         <div class="row">
             <div class="col col-lg-4 col-sm-12 book_cover">
                 <img src="{{ book.book_cover }}" alt="{{ book.name }}">
@@ -18,16 +21,24 @@
                 <strong>Recommended: </strong><span class="rec_count">
                     {{ book.recommended_count }}</span><br>
                 <div class="rec_btn_container">
-                    <button class="btn btn-primary btn-xl js-scroll-trigger rec_btn"><i class="fas fa-thumbs-up"></i> Recommend
+                    <button class="btn btn-primary btn-xl js-scroll-trigger rec_btn"><i class="fas fa-thumbs-up"></i>
+                        Recommend
                     </button>
-                    <a class="btn btn-primary btn-xl js-scroll-trigger rec_btn"
-                        href="{{ book.shop_link }}"
+                    <a class="btn btn-primary btn-xl js-scroll-trigger rec_btn" href="{{ book.shop_link }}"
                         target="_blank"><i class="fas fa-shopping-cart"></i> Buy</a>
                 </div>
             </div>
         </div>
+
+        {% if loop.index != loop.length %}
+
         <hr>
+
+        {% endif %}
+
         {% endfor %}
+
     </div>
 </div>
+
 {% endblock %}
