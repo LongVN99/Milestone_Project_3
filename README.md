@@ -112,8 +112,10 @@ To make the web simple for the user to understand and to give necessairy informa
 * All links were tested. Internal links all work. External links all work and open in new window.
 * The data displayed correctly, all buttons link to a correct destination.
 * All the pages are responsive on all screen sizes.
-* Users are able to Edit, Add, Remove books on the website after logging in.
-* Users can't Edit or Remove books which others added.
+* Users are able to Edit, Add, Remove books which are added by themself on the website after logging in.
+* Edit and Remove buttons appear correctly if the book is added by the logged in account.
+* Form fields is validated by type (text, url, date)
+* Books which are added by logged in account appears in profile page.
 
 ## Strategy
 
@@ -156,7 +158,7 @@ The goal in the design was to make it as easy as possible for non experience use
 The navigation bar is structured to get the right information as quickly as possible. The website itself is structured in hope of user feels ease while viewing and the database is also structured in order and in a clear way.
 
 ## Known Issues
-* Unable to check if users provide the correct informations
+* Unable to define if users provide the correct informations
 * If book_cover is a wrong link the image will not be displayed
 
 ## Deployment
