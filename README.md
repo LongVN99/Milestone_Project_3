@@ -20,20 +20,24 @@ You visit BookReviews right away by clicking
 ## User Experience (UX)
 To make the web simple for the user to understand and to give necessairy information about how to use the web and about the book provided.
 
-- ### User stories
+- ### Users
     -   #### New user Goals
         1. As a new user, I want to know what the web is.(BookReviews/home)
         2. As a new user, I want register an account.(register)
         3. As a new user, I want to look for recommendations books provides by BookReviews. (recommendations)
 
     -   #### Returning user Goals.
-        1. As a returning user, I want to write reviews.
+        1. As a returning user, I would like to be able to edit or delete any content added by me.
 
     -   #### Frequent user Goals
         1. As a frequent user, I want to log in my account. (account)
         2. As a frequent user, I want to views book on multiple device. (responsive)
         3. As a frequent user, I want to recommend book. (recommendations)
         4. As a frequent user, I want to check my recommended books. (profile)
+
+- ### Owners
+    1. As a owner, I want my website to be preferable and accessible.
+    2. As a owner, I want to earn money on each book purchased via a link from the site.
 
 -   ### Design
     -   #### Colour Scheme
@@ -81,8 +85,8 @@ To make the web simple for the user to understand and to give necessairy informa
         * In BookReviews's recommendations page user can see all the book in BookReviews's Database.
 
 -   #### Returning user Goals.
-    1.  As a returning user, I want to write reviews.aa
-        * Reviews page which allows user to make a reviews on a book.
+    1.  As a returning user, I would like to be able to edit or delete any content added by me.
+        * Edit button appear.
         * Reviews information from each book will also be shown.
         
         
@@ -103,7 +107,7 @@ To make the web simple for the user to understand and to give necessairy informa
         * After logging in BookReviews users are able to check their profile which displays book(s) that this user accout added to BookReviews recommendations.
 
 ### Further Testing
-* Registered account stores in mongoDB. [startbootstrap creative](https://startbootstrap.com/theme/creative)
+* Registered account stores in mongoDB. [MongoDB](https://www.mongodb.com/)
 * Every button has the same style to increase the look and feel of user when changing pages.
 * All links were tested. Internal links all work. External links all work and open in new window.
 * The data displayed correctly, all buttons link to a correct destination.
