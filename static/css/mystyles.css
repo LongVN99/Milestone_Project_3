@@ -144,18 +144,18 @@ input:focus{
 }
 
 @media only screen and (max-width: 600px) {
-.book_cover img {
-    height: auto;
-    width: 210px;
-}
+    .book_cover img {
+        height: auto;
+        width: 210px;
+    }
 }
 
 @media only screen and (max-width: 1000px) {
-.book_cover img {
-    height: auto;
-    width: 280px;
-    margin-bottom: 20px;
-}
+    .book_cover img {
+        height: auto;
+        width: 280px;
+        margin-bottom: 20px;
+    }
 }
 
 .rec_divider {
@@ -175,10 +175,10 @@ input:focus{
 
 
 @media only screen and (max-width: 600px) {
-.rec_btn {
-    width: 100%;
-    margin-top: 10px;
-}
+    .rec_btn {
+        width: 100%;
+        margin-top: 10px;
+    }
 }
 
 .card-main {
@@ -235,4 +235,18 @@ input:focus{
 
 .min-h-100 {
     min-height: 100vh;
+}
+
+.masthead {
+    min-height: 100vh;
+}
+
+@media only screen and (max-width: 800px) {
+    .min-h-100 {
+        min-height: 75vh;
+    }
+
+    .masthead {
+        min-height: 75vh;
+    }
 }
