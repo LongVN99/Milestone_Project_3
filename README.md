@@ -75,35 +75,35 @@ To make the web simple for the user to understand and to give necessairy informa
 
 ### Testing User Stories from User Experience (UX) Section
 -   #### New user Goals
-    1. As a new user, I want to know what the web is.(BookReviews/about)
+    1. As a new user, I want to know what the web is.(BookReviews/about) - PASS
         * By clicking on BookReviews user can see information of BookReviews.
 
-    2. As a new user, I want register an account.(register)
+    2. As a new user, I want register an account.(register) - PASS
         * User can register an account, data will be stored in mongoDB's Database (users)
 
-    3. As a new user, I want to look for recommendations books provides by BookReviews. (recommendations)
+    3. As a new user, I want to look for recommendations books provides by BookReviews. (recommendations) - PASS
         * In BookReviews's recommendations page user can see all the book in BookReviews's Database.
 
 -   #### Returning user Goals.
-    1.  As a returning user, I would like to be able to edit or delete any content added by me.
-        * Edit button appear.
+    1.  As a returning user, I would like to be able to edit or delete any content added by me. - PASS
+        * Edit and delete button appear.
         * Reviews information from each book will also be shown.
         
         
 -   #### Frequent user Goals
-    1. As a frequent user, I want to log in my account. (account)
+    1. As a frequent user, I want to log in my account. (account)  - PASS
         * user can log in his account if he has already registered.
 
-    2. As a frequent user, I want to views book on multiple device. (responsive) 
+    2. As a frequent user, I want to views book on multiple device. (responsive)  - PASS
         * Each device have its own style which make the web responsive. So user can view on a mobile phone or a computer.
         * Click [here](#demo) to see how does the responsive look like.
 
-    3. As a frequent user, I want to recommend book. (recommendations)
+    3. As a frequent user, I want to recommend book. (recommendations) - PASS
         * By clicking on recommended button, the recommended count will be increased.
         * User must login before to recommend book.
         * User can recommend the same book once per account.
 
-    4. As a frequent user, I want to check my recommended books. (profile)
+    4. As a frequent user, I want to check my recommended books. (profile)  - PASS
         * After logging in BookReviews users are able to check their profile which displays book(s) that this user accout added to BookReviews recommendations.
 
 ### Features Testing
@@ -169,10 +169,9 @@ The navigation bar is structured to get the right information as quickly as poss
 * If book_cover is a wrong link the image will not be displayed
 
 ## Deployment
-This site is hosted using GitHub pages, deployed directly from the master branch. The deployed site will update automatically upon new commits to the master branch. In order for the site to deploy correctly on GitHub pages, the landing page must be named index.html.
+This site was developed on GitPod, using Git and GitHub to host the repository as we cannot host a Python project on GitHub Page which only allows for static websites. Git was used for version control by utilizing the Gitpod terminal to commit to Git and Push to GitHub.
 
-To run locally, you  can clone this repository directly into the editor of your choice by pasting the link into your terminal. To cut ties with this GitHub repository, type git remote rm origin into the terminal.
-
+Note: It's important to contained our environment variables within a hidden env.py file which should never be pushed to GitHub by ensuring .gitignore has it secured.
 ### `How to open this project`
 1. Copy this link "https://bookreviews-heroku.herokuapp.com/"
 1. Paste and open on a browser
