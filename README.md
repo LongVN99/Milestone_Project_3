@@ -106,16 +106,23 @@ To make the web simple for the user to understand and to give necessairy informa
     4. As a frequent user, I want to check my recommended books. (profile)
         * After logging in BookReviews users are able to check their profile which displays book(s) that this user accout added to BookReviews recommendations.
 
+### Features Testing
+* Edit and Remove buttons appear correctly if the book is added by the logged in account.
+* Form fields is validated by type (text, url, date)
+* Books which are added by logged in account appears in profile page.
+* Users are able to Edit, Add, Remove books which are added by themself on the website after logging in.
+
 ### Further Testing
 * Registered account stores in mongoDB. [MongoDB](https://www.mongodb.com/)
 * Every button has the same style to increase the look and feel of user when changing pages.
 * All links were tested. Internal links all work. External links all work and open in new window.
 * The data displayed correctly, all buttons link to a correct destination.
 * All the pages are responsive on all screen sizes.
-* Users are able to Edit, Add, Remove books which are added by themself on the website after logging in.
-* Edit and Remove buttons appear correctly if the book is added by the logged in account.
-* Form fields is validated by type (text, url, date)
-* Books which are added by logged in account appears in profile page.
+
+### Bugs
+#### Fixed
+* Add book doesn't display correctly on mobile (responsive fixed)
+* Footer is always on the bottom of the web. (add 100vh for body content)
 
 ## Strategy
 
