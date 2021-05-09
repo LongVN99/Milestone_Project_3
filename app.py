@@ -92,7 +92,12 @@ def logout():
 
 @app.route("/profile/<username>", methods=["GET", "POST"])
 def profile(username):
-    # grab the session user's username from db
+    """
+        Gets user data from database and displays all books that current
+        user added to BookReviews.
+
+        Return: A list of book(s) created by current user from database.
+    """
     username = mongo.db.users.find_one(
         {"username": session["user"]})["username"]
     if session["user"]:
@@ -104,25 +109,47 @@ def profile(username):
 
 @app.route("/add_book", methods=["GET", "POST"])
 def add_book():
-    if request.method == "POST":
-        # define our dict
-        book = {
-            "category_name": request.form.get("category_name"),
-            "name": request.form.get("name"),
-            "author": request.form.get("author"),
-            "publisher": request.form.get("publisher"),
-            "genre": request.form.get("genre"),
-            "publication_date": request.form.get("publication_date"),
-            "book_cover": request.form.get("book_cover"),
-            "shop_link": request.form.get("shop_link"),
-            "recommended_by": session["user"],
-        }
-        mongo.db.recommendations.insert_one(book)
-        flash("Book Successfully Added")
-        return redirect(url_for("recommendations"))
+    '''
+    * This adds a book details when successful,
+    updating them in the db and display it in recommendations.
 
-    categories = mongo.db.categories.find().sort("category_name", 1)
-    return render_template("add_book.html", categories=categories)
+    \n Args:
+    1.The form user inputs for: category_name, name,
+    author, publisher, genre, publication_date, book_cover,
+    shop_link and recommended_by.
+
+    \n Returns:
+    *  If successful, updates this book the mongo db and display
+    in recommendations.
+
+    \n Notes: User must login to preform this process. In case the
+    user enter /add_book to URL and the user hasn't login,
+    we will direct to the login page.
+    '''
+    if 'user' in session:
+        if request.method == "POST":
+            # define our dict
+            book = {
+                "category_name": request.form.get("category_name"),
+                "name": request.form.get("name"),
+                "author": request.form.get("author"),
+                "publisher": request.form.get("publisher"),
+                "genre": request.form.get("genre"),
+                "publication_date": request.form.get("publication_date"),
+                "book_cover": request.form.get("book_cover"),
+                "shop_link": request.form.get("shop_link"),
+                "recommended_by": session["user"],
+            }
+            mongo.db.recommendations.insert_one(book)
+            flash("Book Successfully Added")
+            return redirect(url_for("recommendations"))
+
+        categories = mongo.db.categories.find().sort("category_name", 1)
+        return render_template("add_book.html", categories=categories)
+
+    else:
+        flash("You must log in first")
+        return redirect(url_for("login"))
 
 
 @app.route("/edit_book/<book_id>", methods=["GET", "POST"])
