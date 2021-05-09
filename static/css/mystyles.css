@@ -250,3 +250,7 @@ input:focus{
         min-height: 75vh;
     }
 }
+
+.profile-h-100 {
+    min-height: 100vh;
+}
