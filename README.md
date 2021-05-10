@@ -178,37 +178,15 @@ Note: It's important to contained our environment variables within a hidden env.
 1. Copy this link "https://bookreviews-heroku.herokuapp.com/"
 1. Paste and open on a browser
 
-### `How to open this project localy`
-
-1. Open Milestone_Project_1 on Github
-1. Download as a ZIP file
-1. Extract the folder
-1. Open Memo-flag folder
-1. Run index.html file on a web browser such as Firefox or Chrome
-
-### `How to make a Local Clone`
-
-1. Log in to GitHub and locate the [GitHub Repository](https://github.com/)
-1. Under the repository name, click "Clone or download".
-1. To clone the repository using HTTPS, under "Clone with HTTPS", copy the link.
-1. Open Git Bash
-1. Change the current working directory to the location where you want the cloned directory to be made.
-1. Type `git clone`, and then paste the URL you copied in Step 3.
-1. Type this then Press Enter. Your local clone will be created.
-```
-$ git clone https://github.com/YOUR-USERNAME/YOUR-REPOSITORY
-```
-
-```
-$ git clone https://github.com/YOUR-USERNAME/YOUR-REPOSITORY
-> Cloning into `CI-Clone`...
-> remote: Counting objects: 10, done.
-> remote: Compressing objects: 100% (8/8), done.
-> remove: Total 10 (delta 1), reused 10 (delta 1)
-> Unpacking objects: 100% (10/10), done.
-```
-
-Click [Here](https://help.github.com/en/github/creating-cloning-and-archiving-repositories/cloning-a-repository#cloning-a-repository-to-github-desktop) to retrieve pictures for some of the buttons and more detailed explanations of the above process.
+### Local Deployment
+* On the [GitHub Repository](https://github.com/LongVN99/Milestone_Project_3), click on the '↓ Code' button.
+* Copy the link to clone the repository using the HTTPS tab.
+* In your preferred IDE CLI, navigate to the directory you would like to clone to.
+* Type `git clone ` followed by the URL you copied from step 3 and press enter.
+* Once cloned, all files from workspace will be visible.
+* You will need to create an `env.py` that had previously been added to the `.gitignore` file.
+* To test type `python3 app.py runserver` into the CLI and open the 8080 port.
+* Finally using git you can push this to your own GitHub repository.
 
 ## Heroku
 
