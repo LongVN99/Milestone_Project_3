@@ -10,7 +10,7 @@ By logging in users can see recommendations books and recommend book on BookRevi
 
 ## Demo
 
-You visit BookReviews right away by clicking
+You can visit BookReviews right away by clicking
 [here](https://bookreviews-heroku.herokuapp.com/)
 <img src='mockups/DEMO_BookReviews.png'></img>
 
@@ -118,11 +118,13 @@ To make the web simple for the user to understand and to give necessairy informa
 * All links were tested. Internal links all work. External links all work and open in new window.
 * The data displayed correctly, all buttons link to a correct destination.
 * All the pages are responsive on all screen sizes.
+* If user hasn't log in and enters in the url an link which are allowed for logged user such as add_book, this user will be direct to log in page with a message "You must log in first".
 
 ### Bugs
 #### Fixed
 * Add book doesn't display correctly on mobile (responsive fixed)
 * Footer is always on the bottom of the web. (add 100vh for body content)
+* User who hasn't log in can't enter the page which is allowed for logged account only
 
 ## Strategy
 
