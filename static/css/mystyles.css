@@ -241,18 +241,18 @@ input:focus{
     min-height: 100vh;
 }
 
-@media only screen and (max-width: 1000px) {
-    header.masthead {
-        padding-top: 25rem;
+.profile-h-100 {
+    min-height: 100vh;
+}
+
+@media only screen and (max-width: 1200px) {
+    .md-mt-10 {
+        margin-top: 12rem !important;
     }
 }
 
 @media only screen and (max-width: 600px) {
-    header.masthead {
-        padding-top: 12.5rem;
+    .md-mt-10 {
+        margin-top: 7.5rem !important;
     }
-}
-
-.profile-h-100 {
-    min-height: 100vh;
 }
