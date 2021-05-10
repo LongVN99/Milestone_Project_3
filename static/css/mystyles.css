@@ -241,13 +241,15 @@ input:focus{
     min-height: 100vh;
 }
 
-@media only screen and (max-width: 800px) {
-    .min-h-100 {
-        min-height: 75vh;
+@media only screen and (max-width: 1000px) {
+    header.masthead {
+        padding-top: 25rem;
     }
+}
 
-    .masthead {
-        min-height: 75vh;
+@media only screen and (max-width: 600px) {
+    header.masthead {
+        padding-top: 12.5rem;
     }
 }
 
