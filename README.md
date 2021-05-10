@@ -171,12 +171,18 @@ The navigation bar is structured to get the right information as quickly as poss
 * If book_cover is a wrong link the image will not be displayed
 
 ## Deployment
-This site was developed on GitPod, using Git and GitHub to host the repository as we cannot host a Python project on GitHub Page which only allows for static websites. Git was used for version control by utilizing the Gitpod terminal to commit to Git and Push to GitHub.
-
-Note: It's important to contained our environment variables within a hidden env.py file which should never be pushed to GitHub by ensuring .gitignore has it secured.
 ### `How to open this project`
 1. Copy this link "https://bookreviews-heroku.herokuapp.com/"
 1. Paste and open on a browser
+
+### Connecting the Application to MongoDB
+1. Logged into my MongoDB account.
+1. With the "Clusters" tab selected, I clicked on "Connect"
+1. Selected "Connect your application"
+1. Selected "Python" as the "Driver" and "Version" "3.6 or later".
+1. Copied the connection string and pasted it in my env.py file editing it to include my dbname and my user password.
+1. Created an instance of PyMongo and passed the application to that instance as below:
+-       mongo = PyMongo(app)
 
 ### Local Deployment
 * On the [GitHub Repository](https://github.com/LongVN99/Milestone_Project_3), click on the '↓ Code' button.
@@ -188,54 +194,43 @@ Note: It's important to contained our environment variables within a hidden env.
 * To test type `python3 app.py runserver` into the CLI and open the 8080 port.
 * Finally using git you can push this to your own GitHub repository.
 
-## Heroku
+### Heroku Deployment
+*In Gitpod:*
 
-By using Heroku platform for BookReviews, the following steps were taken:
+* Once the Flask App is created, the following OS default environment variables were set in the `env.py` file:
+    * "IP", with the IP address you want the app to run on.
+    * "PORT", with the specified port.
+    * "SECRET_KEY", with a value generated from a random key generator.
+    * "MONGO_URI", with the connection string from MongoDB.
+    * "MONGO_DBNAME", with the database name
 
-### Create A Heroku App
+* This file along with all other sensitive files were added to the `.gitignore` file.
+* To specify the Python package dependencies to Heroku the requirements.txt file was created using the command `pip3 freeze --local > requirements.txt`.
+* The Procfile was also created using the command `echo web: python app.py` to tell Heroku that the `app.py` file uses the Python language.
 
-* Navigated to [Heroku.com](https://www.heroku.com/) in web browser. Once there, clicked on "Sign Up" and created a new account.
-* Chose 'Python' as Primary Development Language.
-* Selected "**Create new app**" from the Heroku dashboard.
-* Filled in the unique app name on the form and selected corresponding region, then clicked on "**Create app**"
+*In Heroku:*
 
-### Install Heroku CLI
+* A new app was created with the name 'bookreviews-heroku'.
+* In the 'Deploy Tab' GitHub was connected using the repository name.
+* In the 'Settings' tab of Heroku, the Configuration Variables (Config Vars) were added (these are the 'key: value' pairs that were declared in the `env.py` file).
+* Back in the 'Deploy' tab the 'Enable Automatic Deployment' button was clicked to allow automatic updates from GitHub.
+* The branch was then deployed from the master.
 
-I used the Heroku command-line interface, within the Terminal:
+*In Gitpod:*
 
-* `npm install -g heroku` - to install Heroku  
-* Type: `heroku login -i` then login to created account
-
-### Connect Git remote
-
-we can either link our local Git repository with Heroku, or setup Automatic
-Deployment from GitHub.
-
-To link the local Git repository to Heroku:
-
-* `git status` - to check the current state of the repository.
-* `git init` - to initialize empty repository (If repository not created already)
-* `git add -A` - to add all the files to staging area.
-* `git commit -m "Deployment to Heroku"` - to commit changes.
-* `git push -u heroku main` - to push code directly to Heroku.
+* The Mongo database is then wired up to the Flask app by adding the Mongo links to the default environment variables.
 
 ### Adding A requirements.txt File
 
 To add the list of Python dependencies that the project needs in order to run successfully and detect the language:
 
 * `pip3 freeze --local > requirements.txt` - command in the terminal to create a requirements.txt file, 
-* `git add -A` - to add what will be commited
-* `git commit -m "Add requirements.txt"` - to commit changes.
-* `git push -u heroku main` - to push file to Heroku.
 
 ### Adding A Procfile
 
 To inform Heroku on how to run the application and which file runs it the **Procfile** was installed:
 
 * `echo web: python app.py > Procfile` - with a capital 'P' command in the terminal to redirect the echo command.
-* `git add Procfile` 
-* `git commit -m "Add Procfile` 
-* `git push`
 
 ## Credits
 - ### Content
