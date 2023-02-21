@@ -11,7 +11,7 @@ By logging in users can see recommendations books and recommend book on BookRevi
 ## Demo
 
 You can visit BookReviews right away by clicking
-[here](https://bookreviews-heroku.herokuapp.com/)
+[here](https://bookrec-3z-onrender-com.onrender.com/)
 <img src='mockups/DEMO_BookReviews.png'></img>
 
 ## Database design
